@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-11 11:16:51
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-14 17:25:04
+ * @LastEditTime: 2022-04-15 13:30:41
  * @FilePath: /vite_ts/vite.config.ts
  * @Description:
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -25,7 +25,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   // const { VITE_APP_BASE_URL, VITE_APP_PORT } = env
   const viteEnv = wrapperEnv(env)
   const { VITE_APP_BASE_URL, VITE_APP_PORT, VITE_APP_PROXY } = viteEnv
-  console.log(' createProxy(VITE_PROXY)', createProxy(VITE_APP_PROXY))
+  console.log('VITE_APP_BASE_URL', VITE_APP_BASE_URL)
   return {
     base: VITE_APP_BASE_URL,
     // esbuild 配置
