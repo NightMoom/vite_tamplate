@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-11 11:16:51
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-15 13:30:41
+ * @LastEditTime: 2022-04-15 13:46:49
  * @FilePath: /vite_ts/vite.config.ts
  * @Description:
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -58,7 +58,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     },
     server: {
       host: true,
-      port: VITE_APP_PORT,
+      port: parseInt(VITE_APP_PORT),
       proxy: createProxy(VITE_APP_PROXY),
     },
   }

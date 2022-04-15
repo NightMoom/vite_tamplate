@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-11 11:16:51
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-14 16:18:14
+ * @LastEditTime: 2022-04-15 13:46:16
  * @FilePath: /vite_ts/src/types/env.d.ts
  * @Description:
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -27,7 +27,7 @@ declare module '*.vue' {
 interface ImportMetaEnv {
   readonly VITE_APP_BASE_URL: string
   readonly VITE_APP_ENV: string
-  readonly VITE_APP_PORT: number
+  readonly VITE_APP_PORT: number | string
 }
 
 interface ImportMeta {
