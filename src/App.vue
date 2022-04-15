@@ -1,21 +1,28 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+<!--
+ * @Author: zsmya
+ * @Date: 2022-04-11 11:16:51
+ * @LastEditors: zsmya
+ * @LastEditTime: 2022-04-15 18:01:41
+ * @FilePath: /vite_ts/src/App.vue
+ * @Description: 
+ * Copyright (c) 2022 by zsmya, All Rights Reserved. 
+-->
+<script setup lang="ts"></script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div id="app-container">
+    <router-view></router-view>
+  </div>
 </template>
 
-<style>
-#app {
+<style lang="scss">
+#app-container {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 100vw;
+  height: 100vh;
 }
 </style>

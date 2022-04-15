@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-11 11:18:21
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-11 13:27:30
+ * @LastEditTime: 2022-04-15 16:29:29
  * @FilePath: /vite_ts/.eslintrc.js
  * @Description:
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -45,7 +45,6 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     quotes: ['warn', 'single'],
-
     'no-var': 'error',
     'prettier/prettier': ['error', { singleQuote: true }],
     // 禁用debugger
@@ -113,8 +112,6 @@ module.exports = {
     'max-statements-per-line': ['warn', { max: 1 }],
     // 要求方法链中每个调用都有一个换行符
     'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 3 }],
-    // 禁止 if 作为唯一的语句出现在 else 语句中
-    'no-lonely-if': 'warn',
     // 禁止空格和 tab 的混合缩进
     'no-mixed-spaces-and-tabs': 'warn',
     // 禁止出现多行空行

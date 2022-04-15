@@ -1,0 +1,8 @@
+// 按钮权限样式
+.btn-disabled {
+  cursor: not-allowed;
+  > * {
+    cursor: inherit !important;
+    pointer-events: none;
+  }
+}

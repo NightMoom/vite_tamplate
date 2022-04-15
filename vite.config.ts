@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-11 11:16:51
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-15 14:18:23
+ * @LastEditTime: 2022-04-15 16:13:38
  * @FilePath: /vite_ts/vite.config.ts
  * @Description:
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -16,6 +16,8 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import * as path from 'path'
 import viteCompression from 'vite-plugin-compression'
+import Components from 'unplugin-vue-components/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd()
@@ -39,6 +41,9 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         algorithm: 'gzip',
         ext: '.gz',
       }),
+      Components({
+        resolvers: [NaiveUiResolver()],
+      }),
     ],
     resolve: {
       alias: {
@@ -49,7 +54,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       preprocessorOptions: {
         // scss 全局环境变量
         scss: {
-          additionalData: '',
+          additionalData: '@import "./src/styles/var.scss";',
         },
       },
     },
