@@ -5,9 +5,8 @@
   "scripts": {
     "dev": "vite --mode development",
     "ext": "vite --mode extranet",
-    "build:pro": "vite build --mode production",
-    "build:ext": "vite build --mode extranet",
-    "build": "vue-tsc --noEmit && vite build",
+    "build:ext": "vue-tsc --noEmit && vite build --mode extranet",
+    "build": "vue-tsc --noEmit && vite build --mode production",
     "preview": "vite preview",
     "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
     "prettier": "prettier --write .",
