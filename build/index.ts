@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-11 17:11:28
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-11 17:30:15
+ * @LastEditTime: 2022-04-14 16:16:58
  * @FilePath: /vite_ts/build/index.ts
  * @Description: vite-config.js 配置方法
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -21,7 +21,9 @@ export function wrapperEnv(envConf: Recordable): ImportMetaEnv {
     if (envName === 'VITE_PROXY') {
       try {
         realName = JSON.parse(realName)
-      } catch (error) {}
+      } catch (error) {
+        console.log('resolve VITE_PROXY fail!')
+      }
     }
     ret[envName] = realName
     process.env[envName] = realName

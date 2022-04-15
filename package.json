@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --mode development",
+    "ext": "vite --mode extranet",
     "build:pro": "vite build --mode production",
     "build:ext": "vite build --mode extranet",
     "build": "vue-tsc --noEmit && vite build",
