@@ -2,8 +2,8 @@
  * @Author: zsmya
  * @Date: 2022-04-15 16:50:25
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-18 15:23:15
- * @FilePath: /vite_ts/src/views/Home/Home.vue
+ * @LastEditTime: 2022-04-18 18:04:19
+ * @FilePath: /vite_ts/src/views/Home/HomeIndex.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
 -->
@@ -57,7 +57,7 @@ export default {
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 10px;
   max-width: 1920px;
   min-width: 1366px;

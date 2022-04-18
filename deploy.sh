@@ -9,7 +9,7 @@ npm run build
 
 git add -A
 
-git commit -m '$1'
+git commit -m "$1"
 
 git pull
 
