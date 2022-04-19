@@ -2,8 +2,8 @@
  * @Author: zsmya
  * @Date: 2022-04-18 09:42:16
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-18 16:07:53
- * @FilePath: /vite_ts/src/views/Controls/OrbitControls/OrbitControls.vue
+ * @LastEditTime: 2022-04-19 16:53:16
+ * @FilePath: /vite_ts/src/views/Controls/OrbitControls.vue
  * @Description: 轨道控制器
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
 -->
@@ -23,13 +23,12 @@ import {
 } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
-import Stats from 'stats.js'
+import { StatsModule } from '@/utils/stats'
 let renderer: WebGLRenderer
 const initWebGL = async () => {
-  const el = document.getElementById('orbitControls') || document.body
-  console.log('el', el)
-  const width = el?.clientWidth
-  const height = el?.clientHeight
+  const el: HTMLElement = document.getElementById('orbitControls') || document.body
+  const width = el.clientWidth
+  const height = el.clientHeight
   //  初始化场景
   const scene = new Scene()
   scene.position.set(0, 0, 0)
@@ -58,10 +57,8 @@ const initWebGL = async () => {
   const boxMesh = new Mesh(boxGeometry, boxMaterial)
   scene.add(boxMesh)
   el.appendChild(renderer.domElement)
-  const stats = new Stats()
+  const stats = new StatsModule(el, 1)
   renderer.render(scene, camera)
-  el.appendChild(stats.dom)
-  stats.showPanel(0)
 
   const animte = () => {
     requestAnimationFrame(animte)

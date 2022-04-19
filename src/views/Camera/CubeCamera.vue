@@ -2,13 +2,13 @@
  * @Author: zsmya
  * @Date: 2022-04-18 17:03:47
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-18 17:20:30
+ * @LastEditTime: 2022-04-19 16:51:46
  * @FilePath: /vite_ts/src/views/Camera/CubeCamera.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
 -->
 <script setup lang="ts">
-import { onMounted, render } from 'vue'
+import { onMounted } from 'vue'
 
 import {
   CubeCamera,

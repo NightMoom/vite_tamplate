@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-11 11:18:21
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-15 16:29:29
+ * @LastEditTime: 2022-04-19 16:34:36
  * @FilePath: /vite_ts/.eslintrc.js
  * @Description:
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -106,8 +106,6 @@ module.exports = {
     'max-statements': ['warn', 100],
     // 强制回调函数最大嵌套深度
     'max-nested-callbacks': ['warn', 3],
-    // 强制函数定义中最多允许的参数数量
-    'max-params': ['warn', 3],
     // 强制每一行中所允许的最大语句数量
     'max-statements-per-line': ['warn', { max: 1 }],
     // 要求方法链中每个调用都有一个换行符

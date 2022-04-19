@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-15 16:50:25
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-18 18:04:19
+ * @LastEditTime: 2022-04-19 17:01:00
  * @FilePath: /vite_ts/src/views/Home/HomeIndex.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
@@ -48,6 +48,14 @@ export default {
     <n-card title="透视相机" hoverable data-type="PerspectiveCamera">
       透视相机 PerspectiveCamera
     </n-card>
+    <n-card title="基础线条材质" hoverable data-type="LineBasicMaterial">
+      基础线条材质 LineBasicMaterial
+    </n-card>
+    <n-card title="虚线材质" hoverable data-type="LineDashedMaterial">
+      虚线材质 LineDashedMaterial
+    </n-card>
+
+    <n-card title="加载模型 ObjLoader" hoverable data-type="ObjLoader"> 加载模型 ObjLoader </n-card>
     <!-- <n-card title="立体相机" hoverable data-type="StereoCamera"> 立体相机 StereoCamera</n-card>
     <n-card title="光照" hoverable data-type="Light"> 光照 Light</n-card> -->
   </div>

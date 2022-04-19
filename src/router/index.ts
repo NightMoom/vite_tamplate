@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-15 16:43:34
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-18 17:18:07
+ * @LastEditTime: 2022-04-19 17:02:21
  * @FilePath: /vite_ts/src/router/index.ts
  * @Description: vue-router
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -77,10 +77,44 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/CubeCamera',
     component: SubRouter,
+    name: 'CubeCamera',
     children: [
       {
         path: '',
         component: () => import('@/views/Camera/CubeCamera.vue'),
+      },
+    ],
+  },
+  {
+    path: '/LineBasicMaterial',
+    component: SubRouter,
+    name: 'LineBasicMaterial',
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/Material/LineBasicMaterial.vue'),
+      },
+    ],
+  },
+  {
+    path: '/LineDashedMaterial',
+    component: SubRouter,
+    name: 'LineDashedMaterial',
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/Material/LineDashedMaterial.vue'),
+      },
+    ],
+  },
+  {
+    path: '/ObjLoader',
+    component: SubRouter,
+    name: 'ObjLoader',
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/Loader/ObjLoader.vue'),
       },
     ],
   },
