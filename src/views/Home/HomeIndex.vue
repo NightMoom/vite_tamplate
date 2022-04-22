@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-15 16:50:25
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-19 17:01:00
+ * @LastEditTime: 2022-04-22 16:49:37
  * @FilePath: /vite_ts/src/views/Home/HomeIndex.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
@@ -56,6 +56,10 @@ export default {
     </n-card>
 
     <n-card title="加载模型 ObjLoader" hoverable data-type="ObjLoader"> 加载模型 ObjLoader </n-card>
+    <n-card title="场景切换" hoverable data-type="SceneSelect"> 场景切换 SceneSelect </n-card>
+    <n-card title="随机三角形" hoverable data-type="TrangleAngle">随机三角形</n-card>
+    <n-card title="随机正方体" hoverable data-type="RandomBox">随机正方体</n-card>
+
     <!-- <n-card title="立体相机" hoverable data-type="StereoCamera"> 立体相机 StereoCamera</n-card>
     <n-card title="光照" hoverable data-type="Light"> 光照 Light</n-card> -->
   </div>

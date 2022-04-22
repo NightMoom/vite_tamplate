@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-19 09:48:00
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-19 17:03:48
+ * @LastEditTime: 2022-04-20 14:29:15
  * @FilePath: /vite_ts/src/views/Material/LineDashedMaterial.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
@@ -23,6 +23,7 @@ import {
 } from 'three'
 import { StatsModule } from '@/utils/stats'
 import gemotryUtil from '@/gemotry/gemotry'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 let renderer: WebGLRenderer
 let camera: PerspectiveCamera
 let scene: Scene
@@ -75,12 +76,15 @@ onMounted(() => {
   const animate = () => {
     requestAnimationFrame(animate)
     renderer.render(scene, camera)
-    group.rotation.x += 0.005
-    group.rotation.y += 0.005
-    group.rotation.z += 0.005
+    // group.rotation.x += 0.005
+    // group.rotation.y += 0.005
+    // group.rotation.z += 0.005
     stats.update()
   }
-  animate()
+  // animate()
+  const orb = new OrbitControls(camera, renderer.domElement)
+
+  orb.addEventListener('change', animate)
 })
 </script>
 

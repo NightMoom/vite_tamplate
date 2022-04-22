@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-15 16:43:34
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-19 17:02:21
+ * @LastEditTime: 2022-04-22 16:49:58
  * @FilePath: /vite_ts/src/router/index.ts
  * @Description: vue-router
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -115,6 +115,39 @@ const routes: RouteRecordRaw[] = [
       {
         path: '',
         component: () => import('@/views/Loader/ObjLoader.vue'),
+      },
+    ],
+  },
+  {
+    path: '/SceneSelect',
+    component: SubRouter,
+    name: 'SceneSelect',
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/Scene/SceneSelect.vue'),
+      },
+    ],
+  },
+  {
+    path: '/TrangleAngle',
+    component: SubRouter,
+    name: 'TrangleAngle',
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/Demo/TrangleAngle.vue'),
+      },
+    ],
+  },
+  {
+    path: '/RandomBox',
+    component: SubRouter,
+    name: 'RandomBox',
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/Demo/RandomBox.vue'),
       },
     ],
   },
