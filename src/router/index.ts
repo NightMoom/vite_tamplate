@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-15 16:43:34
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-22 16:49:58
+ * @LastEditTime: 2022-04-25 15:45:00
  * @FilePath: /vite_ts/src/router/index.ts
  * @Description: vue-router
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -148,6 +148,17 @@ const routes: RouteRecordRaw[] = [
       {
         path: '',
         component: () => import('@/views/Demo/RandomBox.vue'),
+      },
+    ],
+  },
+  {
+    path: '/EnvMesh01',
+    component: SubRouter,
+    name: 'EnvMesh01',
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/Demo/EnvMesh01.vue'),
       },
     ],
   },
