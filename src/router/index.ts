@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-15 16:43:34
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-25 15:45:00
+ * @LastEditTime: 2022-04-26 11:30:43
  * @FilePath: /vite_ts/src/router/index.ts
  * @Description: vue-router
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -159,6 +159,17 @@ const routes: RouteRecordRaw[] = [
       {
         path: '',
         component: () => import('@/views/Demo/EnvMesh01.vue'),
+      },
+    ],
+  },
+  {
+    path: '/SnowFlake',
+    component: SubRouter,
+    name: 'SnowFlake',
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/Demo/SnowFlake.vue'),
       },
     ],
   },
