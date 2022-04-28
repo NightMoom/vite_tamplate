@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-26 16:51:11
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-27 18:23:35
+ * @LastEditTime: 2022-04-28 17:29:43
  * @FilePath: /three-admin/src/Layout/NavBar/index.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
@@ -13,7 +13,7 @@
     <div class="logo"></div>
     <div class="menu">
       <div class="menu-item" v-for="(v, index) in format" :key="index">
-        <div class="item-name">{{ v.meta.title }}</div>
+        <div class="item-name" @click="routerTo(v)">{{ v.meta.title }}</div>
       </div>
     </div>
   </div>
@@ -22,13 +22,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useRouter, RouteRecord, RouteMeta } from "vue-router";
-const ignoreRouter: Array<string> = ["/login", "*"];
+import { useMainStore } from "@/store/index";
 interface routerFormat {
   path: string;
   meta: RouteMeta;
 }
 const NavBar = defineComponent({
   setup() {
+    const mainStore = useMainStore();
     const router = useRouter();
     const currentRouter: RouteRecord[] = router.getRoutes();
 
@@ -43,9 +44,16 @@ const NavBar = defineComponent({
     const format = formatRouter(currentRouter).filter(
       (i) => i.meta && i.meta.title
     );
-    console.log(format);
+
+    const routerTo = (v: routerFormat): void => {
+      mainStore.$patch({
+        routerKey: v.path,
+      });
+      router.replace(v);
+    };
     return {
       format,
+      routerTo,
     };
   },
 });
@@ -62,6 +70,7 @@ export default NavBar;
     height: 100%;
   }
   .menu {
+    display: flex;
     .menu-item {
       padding: 0 30px;
       .item-name {

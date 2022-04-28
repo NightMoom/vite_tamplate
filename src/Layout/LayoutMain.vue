@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-26 16:37:37
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-27 18:20:06
+ * @LastEditTime: 2022-04-28 09:48:22
  * @FilePath: /three-admin/src/Layout/layoutMain.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
@@ -20,7 +20,7 @@
           bordered
           content-style="padding: 24px;"
         >
-          海淀桥
+          <SilderBar></SilderBar>
         </n-layout-sider>
         <n-layout content-style="padding: 12px;">
           <n-h2>平山道</n-h2>
@@ -44,12 +44,13 @@
 
 <script lang="ts">
 import NavBar from "./NavBar/index.vue";
-
+import SilderBar from "./SilderBar/index.vue";
 import { ref, defineComponent } from "vue";
 
 const LayoutMain = defineComponent({
   components: {
     NavBar,
+    SilderBar,
   },
   setup() {
     const navbar = ref(null);
