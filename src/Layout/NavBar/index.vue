@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-26 16:51:11
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-28 17:29:43
+ * @LastEditTime: 2022-04-29 16:53:39
  * @FilePath: /three-admin/src/Layout/NavBar/index.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
@@ -10,7 +10,7 @@
 
 <template>
   <div class="nav-bar">
-    <div class="logo"></div>
+    <div class="logo">看上去应该是放logo</div>
     <div class="menu">
       <div class="menu-item" v-for="(v, index) in format" :key="index">
         <div class="item-name" @click="routerTo(v)">{{ v.meta.title }}</div>
@@ -66,8 +66,11 @@ export default NavBar;
   align-items: center;
   height: 100%;
   .logo {
-    width: 120px;
+    width: 200px;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .menu {
     display: flex;
@@ -75,10 +78,10 @@ export default NavBar;
       padding: 0 30px;
       .item-name {
         color: #000;
-        font-size: 24px;
+        font-size: 20px;
         cursor: pointer;
         &:hover {
-          color: rgb(53, 112, 214);
+          color: rgb(255, 109, 42);
         }
       }
     }

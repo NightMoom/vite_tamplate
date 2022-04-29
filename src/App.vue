@@ -1,6 +1,8 @@
 <template>
   <div id="nav">
-    <router-view />
+    <a-config-provider>
+      <router-view />
+    </a-config-provider>
   </div>
 </template>
 

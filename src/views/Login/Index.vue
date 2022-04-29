@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-26 16:03:15
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-27 17:34:18
+ * @LastEditTime: 2022-04-29 16:59:20
  * @FilePath: /three-admin/src/views/Login/Index.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
@@ -11,32 +11,32 @@
   <div class="login" id="login" ref="login">
     <div class="bg" ref="loginBg"></div>
     <div class="login-form">
-      <n-form
+      <a-form
         ref="form"
-        :model="formModel"
-        label-placement="left"
-        label-width="60"
+        :form="formModel"
+        :label-col="{ span: 5 }"
         :style="{
           maxWidth: '280px',
         }"
       >
-        <n-form-item label="用户名" path="userName">
-          <n-input
+        <a-form-item label="用户名" path="userName">
+          <a-input
             type="text"
             placeholder="请输入用户名"
             v-model:value="formModel.userName"
-          ></n-input>
-        </n-form-item>
-        <n-form-item label="密码" path="passWord">
-          <n-input
+          ></a-input>
+        </a-form-item>
+        <a-form-item label="密码" path="passWord">
+          <a-input-password
             type="password"
             placeholder="请输入密码"
-            show-password-on="mousedown"
-          ></n-input>
-        </n-form-item>
-      </n-form>
+            show-password
+            v-model:value="formModel.passWord"
+          ></a-input-password>
+        </a-form-item>
+      </a-form>
       <div class="action">
-        <n-button round type="primary" @click="onLoginHandle"> 登录 </n-button>
+        <a-button round type="primary" @click="onLoginHandle"> 登录 </a-button>
       </div>
     </div>
   </div>
@@ -66,16 +66,15 @@ const loginComponent = defineComponent({
     const snowFlak = require("@/assets/images/xx.png");
 
     const router: Router = useRouter();
-    const routers = router.getRoutes();
-    console.log("routers", routers);
+
     // loginref
     const loginBg = ref(null);
     const onLoginHandle = (): void => {
-      console.log("handle");
+      router.replace("/");
     };
     const formModel = ref({
-      userName: "",
-      passWord: "",
+      userName: "admin",
+      passWord: "123456",
     });
     let renderer: WebGLRenderer;
     let camera: PerspectiveCamera;
@@ -192,14 +191,14 @@ export default loginComponent;
     z-index: 100;
     width: 300px;
     height: 200px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.5);
     padding: 20px 40px;
     display: flex;
     align-items: center;
     border-radius: 10px;
     color: #fff;
     flex-wrap: wrap;
-    ::v-deep .n-form-item-label {
+    ::v-deep .a-form-item-label {
       color: #fff;
     }
     .action {

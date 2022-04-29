@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-26 15:56:24
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-28 17:32:59
+ * @LastEditTime: 2022-04-29 15:39:08
  * @FilePath: /three-admin/src/main.ts
  * @Description:
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -15,38 +15,27 @@ import { createPinia } from "pinia";
 import { useMainStore } from "@/store/index";
 
 import {
-  create,
-  NButton,
-  NCard,
-  NMenu,
-  NLayoutHeader,
-  NLayout,
-  NForm,
-  NFormItem,
-  NInput,
-} from "naive-ui";
+  Button,
+  Layout,
+  Form,
+  Input,
+  Menu,
+  ConfigProvider,
+} from "ant-design-vue";
 
 const app = createApp(App);
 
-const naive = create({
-  components: [
-    NButton,
-    NMenu,
-    NCard,
-    NLayoutHeader,
-    NLayout,
-    NForm,
-    NFormItem,
-    NInput,
-  ],
-});
-app.use(naive);
-
+app.use(Button);
+app.use(Layout);
+app.use(Form);
+app.use(Input);
+app.use(Menu);
+app.use(ConfigProvider);
+// app.use(MenuItem);
+// app.use(SubMenu);
 app.use(createPinia());
 // 路由守卫
 router.beforeEach((to, form, next) => {
-  console.log("to", to);
-  console.log("form", form);
   const mainStore = useMainStore();
   if (to.path !== "/login") {
     mainStore.$patch({
