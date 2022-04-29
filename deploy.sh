@@ -11,6 +11,6 @@ git add -A
 
 git commit -m "$1"
 
-git pull
+git pull origin three-main
 
 git push 
