@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-04-15 16:50:25
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-26 11:30:26
+ * @LastEditTime: 2022-05-09 14:24:11
  * @FilePath: /vite_ts/src/views/Home/HomeIndex.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
@@ -61,6 +61,7 @@ export default {
     <n-card title="随机正方体" hoverable data-type="RandomBox">随机正方体</n-card>
     <n-card title="环境贴图" hoverable data-type="EnvMesh01">环境贴图</n-card>
     <n-card title="雪花效果" hoverable data-type="SnowFlake">雪花效果</n-card>
+    <n-card title="云" hoverable data-type="Cloud">云</n-card>
 
     <!-- <n-card title="立体相机" hoverable data-type="StereoCamera"> 立体相机 StereoCamera</n-card>
     <n-card title="光照" hoverable data-type="Light"> 光照 Light</n-card> -->
