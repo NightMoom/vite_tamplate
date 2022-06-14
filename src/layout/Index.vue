@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-06-13 14:14:54
  * @LastEditors: zsmya
- * @LastEditTime: 2022-06-13 14:26:13
+ * @LastEditTime: 2022-06-14 16:00:08
  * @FilePath: /effect/src/layout/Index.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
@@ -34,7 +34,7 @@ const back = () => {
   width: 100vw;
   height: 100vh;
   position: relative;
-
+  z-index: 1111;
   .header {
     width: 100%;
     height: 60px;

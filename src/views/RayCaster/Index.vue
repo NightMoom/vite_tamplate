@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-06-13 16:10:05
  * @LastEditors: zsmya
- * @LastEditTime: 2022-06-13 18:17:02
+ * @LastEditTime: 2022-06-14 17:57:25
  * @FilePath: /effect/src/views/RayCaster/Index.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import Layout from "@/layout/Index.vue"
 import bgHeader from "@/assets/bg-header.svg"
-import { onMounted, ref, getCurrentInstance, ComponentInternalInstance } from "vue"
+import { onMounted, onUnmounted, ref, getCurrentInstance, ComponentInternalInstance } from "vue"
 import {
   Scene,
   PerspectiveCamera,
@@ -20,11 +20,12 @@ import {
   Mesh,
   Raycaster,
   Vector2,
+  Object3D,
 } from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { CSS2DRenderer, CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer"
 
-import options from "./chart"
+import { option } from "./chart"
 let scene: Scene
 let camera: PerspectiveCamera
 let renderer: WebGLRenderer
@@ -32,15 +33,18 @@ let orb: OrbitControls
 let labelRenderer: CSS2DRenderer
 let echartsBox: CSS2DObject
 let validMesh: Mesh
+let mesh: Mesh
+let object3D: Object3D
 const charts = ref(null)
 const raycaster = ref(null)
 const chartsBox = ref(null)
+
 let $echarts: any = null
 onMounted(() => {
   const { appContext } = getCurrentInstance() as ComponentInternalInstance
   $echarts = appContext.config.globalProperties.$echarts
   const chartsBoxDom = chartsBox.value || document.body
-
+  object3D = new Object3D()
   const el = raycaster.value || document.body
   const width = el.clientWidth
   const height = el.clientHeight
@@ -59,12 +63,13 @@ onMounted(() => {
   const echartsBox = new CSS2DObject(chartsBoxDom)
 
   echartsBox.position.set(0, 5, 0)
+
+  object3D.add(echartsBox)
   labelRenderer = new CSS2DRenderer()
   labelRenderer.setSize(width, height)
   labelRenderer.domElement.style.position = "absolute"
   labelRenderer.domElement.style.top = "0px"
   document.body.appendChild(labelRenderer.domElement)
-
   // 初始化渲染器
   renderer = new WebGLRenderer()
   renderer.setClearColor(0x000000)
@@ -80,8 +85,7 @@ onMounted(() => {
     transparent: true,
     opacity: 0.8,
   })
-  const mesh = new Mesh(geometry, material)
-  mesh.add(echartsBox)
+  mesh = new Mesh(geometry, material)
   scene.add(mesh)
 
   el.appendChild(renderer.domElement)
@@ -95,6 +99,10 @@ onMounted(() => {
   animate()
 })
 
+onUnmounted(() => {
+  document.body.removeChild(labelRenderer.domElement)
+})
+
 const ray = new Raycaster()
 const mouse = new Vector2()
 window.addEventListener("click", (e) => {
@@ -105,12 +113,11 @@ window.addEventListener("click", (e) => {
   ray.setFromCamera(mouse, camera)
 
   const instersect = ray.intersectObjects(scene.children)
-
+  console.log(instersect)
   if (instersect.length) {
-    const chartDom = document.getElementById("echarts")
-    const chart = $echarts.init(chartDom)
-    chart.resize(300, 240)
-    chart.setOption(options)
+    mesh.add(object3D)
+  } else {
+    mesh.remove(object3D)
   }
 })
 </script>
@@ -123,7 +130,6 @@ window.addEventListener("click", (e) => {
           <img :src="bgHeader" alt="" />
           <span class="text">测试xxx</span>
         </div>
-        <div id="echarts" ref="charts" class="charts"></div>
       </div>
     </div>
   </Layout>
@@ -135,7 +141,6 @@ window.addEventListener("click", (e) => {
   height: 100%;
   .chart {
     width: 300px;
-    height: 270px;
     .chart-header {
       height: 30px;
       width: 100%;
@@ -157,10 +162,6 @@ window.addEventListener("click", (e) => {
         width: 100%;
         height: 100%;
       }
-    }
-    .charts {
-      width: 100%;
-      height: calc(100% - 30px);
     }
   }
 }

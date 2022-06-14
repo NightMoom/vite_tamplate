@@ -1,3 +1,12 @@
+<!--
+ * @Author: zsmya
+ * @Date: 2022-06-13 14:02:42
+ * @LastEditors: zsmya
+ * @LastEditTime: 2022-06-14 17:20:03
+ * @FilePath: /effect/src/views/Home/Index.vue
+ * @Description: 
+ * Copyright (c) 2022 by zsmya, All Rights Reserved. 
+-->
 <script setup lang="ts">
 import { onMounted } from "vue"
 import { useRouter } from "vue-router"
@@ -26,6 +35,21 @@ const goTo = (path: string) => {
       <el-col :span="6">
         <el-card shadow="hover" @click.capture="goTo('RayCaster')"> 射线追踪 </el-card>
       </el-col>
+      <!-- <el-col :span="6">
+        <el-card shadow="hover" @click.capture="goTo('RayEchartsOne')"> 图表1 </el-card>
+      </el-col> -->
+      <!-- <el-col :span="6">
+        <el-card shadow="hover" @click.capture="goTo('EchartsTwo')"> 图表2 </el-card>
+      </el-col> -->
+      <el-col :span="6">
+        <el-card shadow="hover" @click.capture="goTo('Build')"> 建筑模型 </el-card>
+      </el-col>
+      <el-col :span="6">
+        <el-card shadow="hover" @click.capture="goTo('Cloud')"> 流动的云 </el-card>
+      </el-col>
+      <el-col :span="6">
+        <el-card shadow="hover" @click.capture="goTo('Earth')"> 地球 </el-card>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -36,5 +60,8 @@ const goTo = (path: string) => {
   height: 100vh;
   box-sizing: border-box;
   padding: 8px;
+  :deep .el-col {
+    margin-bottom: 10px;
+  }
 }
 </style>

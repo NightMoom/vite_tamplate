@@ -1,3 +1,12 @@
+/*
+ * @Author: zsmya
+ * @Date: 2022-06-13 14:02:41
+ * @LastEditors: zsmya
+ * @LastEditTime: 2022-06-14 14:23:49
+ * @FilePath: /effect/.eslintrc.js
+ * @Description:
+ * Copyright (c) 2022 by zsmya, All Rights Reserved.
+ */
 module.exports = {
   root: true,
   env: {
@@ -28,7 +37,7 @@ module.exports = {
     "vue/multi-word-component-names": [
       "error",
       {
-        ignores: ["Index"],
+        ignores: ["Index", "Echarts", "Build"],
       },
     ],
     "@typescript-eslint/ban-ts-ignore": "off",

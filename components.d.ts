@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-06-14 18:04:29
  * @LastEditors: zsmya
- * @LastEditTime: 2022-06-14 18:04:43
+ * @LastEditTime: 2022-06-14 18:06:24
  * @FilePath: /effect/components.d.ts
  * @Description:
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -17,8 +17,8 @@ declare module "@vue/runtime-core" {
     ElButton: typeof import("element-plus/es")["ElButton"]
     ElCard: typeof import("element-plus/es")["ElCard"]
     ElCol: typeof import("element-plus/es")["ElCol"]
+    ElDialog: typeof import("element-plus/es")["ElDialog"]
     ElRow: typeof import("element-plus/es")["ElRow"]
-    HelloWorld: typeof import("./src/components/HelloWorld.vue")["default"]
     RouterLink: typeof import("vue-router")["RouterLink"]
     RouterView: typeof import("vue-router")["RouterView"]
   }

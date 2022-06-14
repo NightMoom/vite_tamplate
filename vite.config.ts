@@ -1,3 +1,12 @@
+/*
+ * @Author: zsmya
+ * @Date: 2022-06-13 14:02:42
+ * @LastEditors: zsmya
+ * @LastEditTime: 2022-06-14 17:39:41
+ * @FilePath: /effect/vite.config.ts
+ * @Description:
+ * Copyright (c) 2022 by zsmya, All Rights Reserved.
+ */
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
 import * as path from "path"
@@ -9,6 +18,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx"
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/three-effect",
   plugins: [
     vue(),
     AutoImport({

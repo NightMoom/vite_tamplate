@@ -4,12 +4,12 @@ import * as echarts from "echarts"
  * @Author: zsmya
  * @Date: 2022-06-13 16:32:11
  * @LastEditors: zsmya
- * @LastEditTime: 2022-06-13 18:19:44
+ * @LastEditTime: 2022-06-14 10:08:50
  * @FilePath: /effect/src/views/RayCaster/chart.ts
  * @Description:
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
  */
-const option = {
+export const option = {
   color: ["#80FFA5", "#00DDFF", "#37A2FF", "#FF0087", "#FFBF00"],
   title: {
     // text: "Gradient Stacked Area Chart",
@@ -191,4 +191,19 @@ const option = {
     },
   ],
 }
-export default option
+
+export const eoption = {
+  xAxis: {
+    type: "category",
+    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  },
+  yAxis: {
+    type: "value",
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: "line",
+    },
+  ],
+}
