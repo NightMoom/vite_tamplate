@@ -2,8 +2,8 @@
  * @Author: zsmya
  * @Date: 2022-04-11 11:16:51
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-15 18:03:19
- * @FilePath: /vite_ts/src/main.ts
+ * @LastEditTime: 2022-07-16 13:36:57
+ * @FilePath: /vite-three-demo/src/main.ts
  * @Description:
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
  */

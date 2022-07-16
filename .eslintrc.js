@@ -2,8 +2,8 @@
  * @Author: zsmya
  * @Date: 2022-04-11 11:18:21
  * @LastEditors: zsmya
- * @LastEditTime: 2022-04-19 16:34:36
- * @FilePath: /vite_ts/.eslintrc.js
+ * @LastEditTime: 2022-07-16 16:50:51
+ * @FilePath: /vite-three-demo/.eslintrc.js
  * @Description:
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
  */
