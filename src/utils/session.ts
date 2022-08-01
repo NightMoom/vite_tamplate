@@ -2,9 +2,9 @@
  * @Author: zsmya
  * @Date: 2022-08-01 10:31:55
  * @LastEditors: zsmya
- * @LastEditTime: 2022-08-01 14:16:01
+ * @LastEditTime: 2022-08-01 17:53:25
  * @FilePath: /vite_vue3_ts/src/utils/session.ts
- * @Description:
+ * @Description: 缓存相关
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
  */
 import Cookies from "js-cookie"

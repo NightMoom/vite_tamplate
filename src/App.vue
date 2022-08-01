@@ -2,24 +2,15 @@
  * @Author: zsmya
  * @Date: 2022-08-01 09:33:16
  * @LastEditors: zsmya
- * @LastEditTime: 2022-08-01 15:29:22
+ * @LastEditTime: 2022-08-01 16:25:23
  * @FilePath: /vite_vue3_ts/src/App.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
 -->
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from "./components/HelloWorld.vue"
-
-import { reactive } from "vue"
-
-const users = reactive<UserInfo>({ userName: "", userPwd: "" })
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <router-view></router-view>
 </template>
 
 <style>

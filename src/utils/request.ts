@@ -2,14 +2,18 @@
  * @Author: zsmya
  * @Date: 2022-08-01 10:28:34
  * @LastEditors: zsmya
- * @LastEditTime: 2022-08-01 15:00:24
+ * @LastEditTime: 2022-08-01 17:53:33
  * @FilePath: /vite_vue3_ts/src/utils/request.ts
- * @Description:
+ * @Description: axios 封装
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
  */
-
+import { loadEnv } from "vite"
 import axios, { AxiosRequestConfig } from "axios"
 import { getCookies } from "./session"
+const env = import.meta.env.MODE
+const url = loadEnv(env, process.cwd(), "VITE_APP")
+
+console.log(url)
 const service = axios.create({
   baseURL: "/",
   // 请求超时
@@ -39,3 +43,5 @@ service.interceptors.response.use((resp) => {
   }
   throw Error("Error")
 })
+
+export default service
