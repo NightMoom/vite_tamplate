@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-08-01 15:37:56
  * @LastEditors: zsmya
- * @LastEditTime: 2022-08-01 17:25:38
+ * @LastEditTime: 2022-08-02 15:03:12
  * @FilePath: /vite_vue3_ts/src/views/Home/Index.vue
  * @Description: 
  * Copyright (c) 2022 by zsmya, All Rights Reserved. 
@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, reactive } from "vue"
-
+import { initRenderer, initCamera, initOrbControl, initScene } from "@/three/common/initialize"
 const Login = defineComponent({
   name: "AppLogin",
   setup() {

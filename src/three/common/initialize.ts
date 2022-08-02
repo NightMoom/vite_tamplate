@@ -2,7 +2,7 @@
  * @Author: zsmya
  * @Date: 2022-08-01 18:28:09
  * @LastEditors: zsmya
- * @LastEditTime: 2022-08-01 18:42:21
+ * @LastEditTime: 2022-08-02 16:22:30
  * @FilePath: /vite_vue3_ts/src/three/common/initialize.ts
  * @Description: 初始化
  * Copyright (c) 2022 by zsmya, All Rights Reserved.
@@ -13,7 +13,9 @@ import {
   WebGLRendererParameters,
   ColorRepresentation,
   Scene,
+  Camera,
 } from "three"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
 /***
  * @description 初始化相机
@@ -52,8 +54,22 @@ const initRenderer = (
   return renderer
 }
 
+/**
+ * @description 初始化场景
+ */
 const initScene = () => {
   return new Scene()
 }
 
-export { initScene, initCamera, initRenderer }
+/**
+ * @description 初始化轨道控制器
+ * @param {Camera} camera 相机
+ * @param {domElement} HTMLElement dom节点
+ */
+const initOrbControl = (camera: Camera, domElement: HTMLElement) => {
+  const orbControl = new OrbitControls(camera, domElement)
+
+  return orbControl
+}
+
+export { initScene, initCamera, initRenderer, initOrbControl }
